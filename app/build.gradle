@@ -18,9 +18,16 @@ repositories {
 dependencies {
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation 'org.testng:testng:7.5.1'
-
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:32.1.1-jre'
+    implementation group: 'io.appium', name: 'java-client', version: '7.0.0'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.24.0'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.24.0'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
