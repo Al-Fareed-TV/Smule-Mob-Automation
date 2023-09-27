@@ -4,15 +4,14 @@
 package smule;
 
 import io.appium.java_client.AppiumDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import smule.pages.Login.LoginPage;
 import utils.ConfigLoader;
 import utils.FilePaths;
 
 import java.time.Duration;
 import java.util.Map;
-
-import static org.testng.Assert.*;
 
 public class LoginTest {
     AppiumDriver androidDriver;
