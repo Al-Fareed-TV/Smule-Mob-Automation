@@ -1,4 +1,7 @@
 package smule.pages.Home;
 
-public class HomeLocators {
+import smule.BasePage;
+
+public class HomeLocators extends BasePage {
+
 }

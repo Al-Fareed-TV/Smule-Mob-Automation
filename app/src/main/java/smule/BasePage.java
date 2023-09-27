@@ -4,17 +4,26 @@
 package smule;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import utils.ConfigLoader;
 
-import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class BasePage {
-    private AndroidDriver<MobileElement> driver = null;
-    public AppiumDriver<MobileElement> getDriver() throws MalformedURLException {
-        if(driver!= null){
-            driver = new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), null);
+    public static AppiumDriver driver;
+
+    public AppiumDriver getDriver() {
+        ConfigLoader configLoader = new ConfigLoader();
+        DesiredCapabilities capabilities = new DesiredCapabilities(configLoader.getCapability());
+        try {
+            if (driver == null) {
+                driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub/"), capabilities);
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            }
+        } catch (Exception e) {
+            System.out.println("Exception caught : " + e.getLocalizedMessage());
         }
         return driver;
     }
