@@ -14,9 +14,15 @@ public class LoginLocators extends BasePage {
     public WebElement okButton;
 
     @AndroidFindBy(id = "com.smule.singandroid:id/email_button_view")
-    public WebElement signInWithGoogle;
+    public WebElement signInWithEmailButton;
+    @AndroidFindBy(id = "com.smule.singandroid:id/editField")
+    public WebElement emailInputElement;
+    @AndroidFindBy(id = "com.smule.singandroid:id/btn_next")
+    public WebElement nextButton;
+    @AndroidFindBy(id = "com.smule.singandroid:id/editField")
+    public WebElement passwordInputElement;
 
-    public LoginLocators(){
-        PageFactory.initElements(new AppiumFieldDecorator(driver),this);
+    public LoginLocators() {
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 }

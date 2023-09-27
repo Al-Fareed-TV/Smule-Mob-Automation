@@ -6,13 +6,17 @@ package smule;
 import io.appium.java_client.AppiumDriver;
 import org.testng.annotations.*;
 import smule.pages.Login.LoginPage;
+import utils.ConfigLoader;
+import utils.FilePaths;
 
 import java.time.Duration;
+import java.util.Map;
 
 import static org.testng.Assert.*;
 
 public class LoginTest {
     AppiumDriver androidDriver;
+    Map credentials = new ConfigLoader().getJSON(FilePaths.CREDENTIALS);
     @BeforeClass
     public void setUp() {
         androidDriver = new BasePage().getDriver();
@@ -22,6 +26,7 @@ public class LoginTest {
         LoginPage loginPage = new LoginPage();
         loginPage.selectLanguage();
         loginPage.confirmLanguage();
-        loginPage.signInWithGoogle();
+        loginPage.signInWithEmail();
+        loginPage.enterCredentials((String)credentials.get("email"),(String)credentials.get("password"));
     }
 }
