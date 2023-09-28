@@ -2,6 +2,7 @@ package smule.pages.Login;
 
 import io.qameta.allure.Step;
 import smule.actions.PageActions;
+import smule.pages.Home.HomePage;
 
 public class LoginPage extends LoginLocators {
 
@@ -24,12 +25,13 @@ public class LoginPage extends LoginLocators {
     }
 
     @Step("Input credentials and sign in")
-    public void enterCredentials(String email, String password) {
+    public HomePage enterCredentials(String email, String password) {
         emailInputElement.sendKeys(email);
         nextButton.click();
         new LoginLocators();
         passwordInputElement.sendKeys(password);
         nextButton.click();
+        return new HomePage();
     }
 
 }

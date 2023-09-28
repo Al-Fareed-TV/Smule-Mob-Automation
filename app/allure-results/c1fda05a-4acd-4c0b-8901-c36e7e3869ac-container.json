@@ -1,0 +1,1 @@
+{"uuid":"c1fda05a-4acd-4c0b-8901-c36e7e3869ac","name":"smule.SearchTest.login","children":["821dc644-754d-4f85-b446-1647c25b7819"],"description":"","befores":[{"name":"login","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1695880765416,"stop":1695880794701}],"afters":[],"start":1695880765416,"stop":1695880794703}
