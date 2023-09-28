@@ -9,19 +9,22 @@ public class LoginPage extends LoginLocators {
     PageActions pageActions = new PageActions();
 
     @Step("Selecting Language")
-    public void selectLanguage() {
+    public LoginPage selectLanguage() {
         pageActions.scrollToText("English");
         engLang.click();
+        return this;
     }
 
     @Step("confirm Language")
-    public void confirmLanguage() {
+    public LoginPage confirmLanguage() {
         okButton.click();
+        return this;
     }
 
     @Step("Sign in with Google")
-    public void signInWithEmail() {
+    public LoginPage signInWithEmail() {
         signInWithEmailButton.click();
+        return this;
     }
 
     @Step("Input credentials and sign in")

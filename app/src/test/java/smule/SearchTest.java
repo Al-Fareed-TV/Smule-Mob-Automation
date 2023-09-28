@@ -11,25 +11,16 @@ import utils.FilePaths;
 
 import java.util.Map;
 
-public class SearchTest  {
+public class SearchTest {
     AppiumDriver androidDriver;
-    HomePage homePage ;
+    HomePage homePage;
     Map credentials = new ConfigLoader().getJSON(FilePaths.CREDENTIALS);
-
-    @BeforeMethod
-    public void login() {
-        androidDriver = new BasePage().getDriver();
-        LoginPage loginPage = new LoginPage();
-        loginPage.selectLanguage();
-        loginPage.confirmLanguage();
-        loginPage.signInWithEmail();
-        homePage = loginPage.enterCredentials((String)credentials.get("email"),(String)credentials.get("password"));
-    }
     @Test
     public void searchSongTest() {
+        androidDriver = new BasePage().getDriver();
+        homePage = homePage.login((String) credentials.get("email"), (String) credentials.get("password"));
         homePage.clearAllPopUps();
         homePage.searchSong();
-
     }
 
 }

@@ -16,16 +16,19 @@ import java.util.Map;
 public class LoginTest {
     AppiumDriver androidDriver;
     Map credentials = new ConfigLoader().getJSON(FilePaths.CREDENTIALS);
+
     @BeforeClass
     public void setUp() {
         androidDriver = new BasePage().getDriver();
         androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    @Test public void shouldLogin() {
+
+    @Test
+    public void shouldLogin() {
         LoginPage loginPage = new LoginPage();
-        loginPage.selectLanguage();
-        loginPage.confirmLanguage();
-        loginPage.signInWithEmail();
-        loginPage.enterCredentials((String)credentials.get("email"),(String)credentials.get("password"));
+        loginPage.selectLanguage()
+                .confirmLanguage()
+                .signInWithEmail()
+                .enterCredentials((String) credentials.get("email"), (String) credentials.get("password"));
     }
 }
