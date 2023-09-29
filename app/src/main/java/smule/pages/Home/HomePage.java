@@ -32,4 +32,15 @@ public class HomePage extends HomeLocators {
         searchInputElement.sendKeys("chaleya");
     }
 
+    @Step("Navigating to different pages")
+    public void navigateToPage(String page){
+        switch (page.toLowerCase()){
+            case "feed" -> feedButton.click();
+            case "explore" -> exploreButton.click();
+            case "activity" -> activityButton.click();
+            case "profile" -> profileButton.click();
+            default -> songBookButton.click();
+        }
+    }
+
 }

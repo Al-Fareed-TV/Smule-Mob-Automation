@@ -19,4 +19,15 @@ public class HomeLocators extends BasePage {
     @AndroidFindBy(id = "com.smule.singandroid:id/search_edit_text")
     public WebElement searchInputElement;
 
+    @AndroidFindBy(accessibility = "Feed, New notification")
+    public WebElement feedButton;
+    @AndroidFindBy(accessibility = "Explore")
+    public WebElement exploreButton;
+    @AndroidFindBy(accessibility = "Activity")
+    public WebElement activityButton;
+    @AndroidFindBy(accessibility = "Profile, New notification")
+    public WebElement profileButton;
+    @AndroidFindBy(accessibility = "Songbook")
+    public WebElement songBookButton;
+
 }
