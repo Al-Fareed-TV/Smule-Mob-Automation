@@ -24,9 +24,8 @@ public class PageActions extends BasePage {
                 .perform();
     }
 
-    public void scrollScreeen(int startX, int startY, int endX, int endY){
+    public void scrollScreen(int startX, int startY, int endX, int endY){
         TouchAction touchAction = new TouchAction((PerformsTouchActions) getDriver());
-
         touchAction.press(PointOption.point(startX, startY))
                 .waitAction().moveTo(PointOption.point(endX, endY))
                 .release().perform();

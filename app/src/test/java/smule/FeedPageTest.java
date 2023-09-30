@@ -27,9 +27,7 @@ public class FeedPageTest {
         sleep(2000);
         homePage.navigateToPage("feed");
 
-        feedPage
-                .exploreFeed()
-                .selectRandomFeed();
+        feedPage.exploreFeed();
         sleep(15000);
         androidDriver.navigate().back();
     }
