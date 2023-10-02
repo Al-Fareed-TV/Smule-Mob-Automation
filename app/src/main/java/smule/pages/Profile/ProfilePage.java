@@ -16,13 +16,13 @@ public class ProfilePage extends ProfilePageLocators{
     public ProfilePage switchToInvitePage() throws InterruptedException {
         sleep(2000);
         invitesButton.click();
-        return new ProfilePage();
+        return this;
     }
     @Step("Switch to invites page")
     public ProfilePage switchToPlaylistPage() throws InterruptedException {
         sleep(2000);
         playlistButton.click();
-        return new ProfilePage();
+        return this;
     }
     @Step("Switch to invites page")
     public void switchToAboutPage() throws InterruptedException {

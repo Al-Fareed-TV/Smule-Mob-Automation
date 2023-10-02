@@ -1,34 +1,34 @@
-package smule;
+package smule.tests;
 
 import io.appium.java_client.AppiumDriver;
 import org.testng.annotations.Test;
+import smule.BasePage;
 import smule.pages.Home.HomePage;
 import smule.pages.Message.SendMessage;
-import smule.pages.feed.FeedPage;
 import utils.ConfigLoader;
 import utils.FilePaths;
 
 import java.util.Map;
 
-import static java.lang.Thread.sleep;
-
-public class FeedPageTest {
+public class MessageTest {
     HomePage homePage;
     AppiumDriver androidDriver;
     Map credentials = new ConfigLoader().getJSON(FilePaths.CREDENTIALS);
-    FeedPage feedPage;
+    SendMessage message;
 
-    @Test
-    public void exploreFeedPage() throws InterruptedException {
-        feedPage = new FeedPage();
+
+    @Test(groups = {"sanity","regression"})
+    public void testMessaging()  {
         androidDriver = new BasePage().getDriver();
         homePage = new HomePage().login((String) credentials.get("email"), (String) credentials.get("password"));
         homePage.clearAllPopUps();
-        sleep(2000);
-        homePage.navigateToPage("feed");
 
-        feedPage.exploreFeed();
-        sleep(15000);
-        androidDriver.navigate().back();
+        message = new SendMessage();
+        message.clickNewChatIcon().
+                searchUser("kbaganna")
+                .selectUser()
+                .clickOnNextButton()
+                .sendMessage("Hello");
     }
+
 }

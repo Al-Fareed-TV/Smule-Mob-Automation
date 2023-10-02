@@ -14,7 +14,7 @@ public class ActivityPage extends ActivityPageLocators {
         }catch (Exception e){
             System.out.println("Couldn't find the element");
         }
-        return new ActivityPage();
+        return this;
     }
 
     @Step("switch to news page")
