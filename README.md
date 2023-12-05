@@ -45,3 +45,4 @@ Write Mobile automation for testing this application.
 **Binaries**-
 - Ipa - https://omtk.vip/smule-ipa/
 - Apk - https://sing-karaoke-by-smule.en.uptodown.com/
+Automation of Smule Mobile App
